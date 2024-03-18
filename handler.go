@@ -2,6 +2,7 @@ package lab2
 
 import (
 	"bufio"
+	"fmt"
 	"io"
 )
 
@@ -18,11 +19,14 @@ func (ch *ComputeHandler) Compute() error {
 		return err
 	}
 
-	result, err := PrefixToPostfix(input)
+	result, err := calculatePrefix(input)
 	if err != nil {
 		return err
 	}
 
-	ch.Output.Write([]byte(result))
+	_, err = ch.Output.Write([]byte(fmt.Sprintf("%d", result)))
+	if err != nil {
+		return err
+	}
 	return nil
 }
