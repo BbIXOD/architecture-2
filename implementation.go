@@ -31,7 +31,7 @@ func calculatePrefix(expression string) (int, error) {
 			op2 := stack[len(stack)-2]
 			stack = stack[:len(stack)-2]
 
-			result := performOperation(op1, op2, token)
+			result, _ := performOperation(op1, op2, token)
 			stack = append(stack, result)
 		}
 	}
@@ -50,20 +50,20 @@ func isOperand(token string) bool {
 }
 
 // performOperation виконує обчислення між двома операндами за допомогою оператора.
-func performOperation(op1, op2 int, operator string) int {
+func performOperation(op1, op2 int, operator string) (int, error) {
 	switch operator {
 	case "+":
-		return op1 + op2
+		return op1 + op2, nil
 	case "-":
-		return op1 - op2
+		return op1 - op2, nil
 	case "*":
-		return op1 * op2
+		return op1 * op2, nil
 	case "/":
-		return op1 / op2
+		return op1 / op2, nil
 	case "^":
-		return power(op1, op2)
+		return power(op1, op2), nil
 	default:
-		return 0
+		return 0, fmt.Errorf("Invalid operator")
 	}
 }
 
