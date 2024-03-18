@@ -1,4 +1,4 @@
-module https://github.com/BbIXOD/architecture-2
+module github.com/BbIXOD/architecture-2
 
 go 1.21
 
