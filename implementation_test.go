@@ -2,6 +2,7 @@ package lab2
 
 import (
 	"fmt"
+	_ "gopkg.in/check.v1"
 	"testing"
 )
 
