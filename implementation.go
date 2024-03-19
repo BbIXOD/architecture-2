@@ -6,10 +6,10 @@ import (
 	"strings"
 )
 
-// calculatePrefix обчислює результат префіксного виразу.
+// СalculatePrefix обчислює результат префіксного виразу.
 // Вхідний вираз має бути в форматі <оператор> <операнд1> <операнд2>.
 // Приклад: "+ 3 4" поверне 7.
-func calculatePrefix(expression string) (int, error) {
+func СalculatePrefix(expression string) (int, error) {
 	stack := []int{}
 	tokens := strings.Fields(expression)
 

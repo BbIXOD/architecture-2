@@ -36,7 +36,7 @@ func TestCalculatePrefix(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		result, err := calculatePrefix(test.expression)
+		result, err := СalculatePrefix(test.expression)
 		if err != nil {
 			if test.expected != 0 {
 				t.Errorf("Unexpected error for expression %s: %v", test.expression, err)
@@ -48,7 +48,7 @@ func TestCalculatePrefix(t *testing.T) {
 }
 
 func ExampleCalculatePrefix() {
-	res, _ := calculatePrefix("+ 2 2")
+	res, _ := СalculatePrefix("+ 2 2")
 	fmt.Println(res)
 
 	// Output:

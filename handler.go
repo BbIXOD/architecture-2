@@ -19,7 +19,7 @@ func (ch *ComputeHandler) Compute() error {
 		return err
 	}
 
-	result, err := calculatePrefix(input)
+	result, err := СalculatePrefix(input)
 	if err != nil {
 		return err
 	}
