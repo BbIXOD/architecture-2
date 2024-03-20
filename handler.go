@@ -1,7 +1,6 @@
 package lab2
 
 import (
-	"bufio"
 	"fmt"
 	"io"
 )
@@ -12,14 +11,13 @@ type ComputeHandler struct {
 }
 
 func (ch *ComputeHandler) Compute() error {
-	reader := bufio.NewReader(ch.Input)
 
-	input, err := reader.ReadString('\n')
+	input, err := io.ReadAll(ch.Input)
 	if err != nil {
 		return err
 	}
 
-	result, err := СalculatePrefix(input)
+	result, err := СalculatePrefix(string(input))
 	if err != nil {
 		return err
 	}
