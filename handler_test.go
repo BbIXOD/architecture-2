@@ -48,3 +48,14 @@ func (s *HandlerSuite) TestSyntaxError(c *C) {
 
 	c.Assert(err, NotNil)
 }
+
+func (s *HandlerSuite) TestEmptyInput(c *C) {
+	output := bytes.NewBuffer(nil)
+	handler := ComputeHandler{
+		Input:  strings.NewReader(""),
+		Output: output,
+	}
+	err := handler.Compute()
+
+	c.Assert(err, NotNil)
+}
