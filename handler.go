@@ -26,5 +26,5 @@ func (ch *ComputeHandler) Compute() error {
 	if err != nil {
 		return err
 	}
-	return nil
+	return fmt.Errorf("Some error")
 }
